@@ -6,8 +6,14 @@ single-character suffixes on integers:
 
 - `u` denotes an `uint8`
 - `U` denotes an `uint16`
-- `s` denotes an `int16`
+- `i` denotes an `uint32`
+- `I` denotes an `uint64`
+- `w` denotes an `uint128`
+- `s` denotes an `int8`
 - `S` denotes an `int16`
+- `l` denotes an `int32` (default behavior in OCaml)
+- `L` denotes an `int64` (default behavior in OCaml)
+- `W` denotes an `int128`
 
 ## Example
 
