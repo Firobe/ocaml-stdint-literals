@@ -1,0 +1,6 @@
+(library
+ (public_name stdint-literals)
+ (name stdint_literals)
+ (kind ppx_rewriter)
+ (libraries ppxlib stdint)
+ (preprocess (pps ppxlib.metaquot)))

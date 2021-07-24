@@ -1,0 +1,4 @@
+(test
+  (name simple_test)
+  (preprocess (pps stdint_literals))
+  (libraries stdint))
