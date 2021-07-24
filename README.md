@@ -17,12 +17,12 @@ single-character suffixes on integers:
 
 ## Usage
 
-Add `stdint_literals` in your `dune` file as follows:
+Add `stdint-literals` in your `dune` file as follows:
 
 ```
 (executable
   (name example)
-  (preprocess (pps stdint_literals))
+  (preprocess (pps stdint-literals))
   (libraries stdint))
 ```
 

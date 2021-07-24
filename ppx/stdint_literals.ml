@@ -17,18 +17,21 @@ module Converter = struct
 end
 
 module Rule = struct
-  open Ppxlib.Context_free.Rule
+  let patterns = Converter.[
+      ('u', u8);
+      ('U', u16);
+      ('i', u32);
+      ('I', u64);
+      ('w', u128);
+      ('s', s8);
+      ('S', s16);
+      ('W', s128)
+    ]
 
-  let u8 = constant Constant_kind.Integer 'u' (rewriter Converter.u8)
-  let u16 = constant Constant_kind.Integer 'U' (rewriter Converter.u16)
-  let u32 = constant Constant_kind.Integer 'i' (rewriter Converter.u32)
-  let u64 = constant Constant_kind.Integer 'I' (rewriter Converter.u64)
-  let u128 = constant Constant_kind.Integer 'w' (rewriter Converter.u128)
-  let s8 = constant Constant_kind.Integer 's' (rewriter Converter.s8)
-  let s16 = constant Constant_kind.Integer 'S' (rewriter Converter.s16)
-  let s128 = constant Constant_kind.Integer 'W' (rewriter Converter.s128)
+  let rule_of_pattern (ch, conv) =
+    Ppxlib.Context_free.Rule.(constant Constant_kind.Integer ch (rewriter conv))
 
-  let all = [u8; u16; u32; u64; u128; s8; s16; s128]
+  let all = List.map rule_of_pattern patterns
 end
 
 let () = Driver.register_transformation ~rules:Rule.all "Constant rewriting"
