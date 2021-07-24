@@ -1,4 +1,4 @@
-(lang dune 2.9)
+(lang dune 2.8)
 (name stdint-literals)
 
 ; (version 1.0.0)
