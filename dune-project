@@ -16,5 +16,6 @@
  (description "Small PPX for fixed size integer literals")
  (depends
    ppxlib
+   stdint
    (dune :build)
    (stdint :with_test)))

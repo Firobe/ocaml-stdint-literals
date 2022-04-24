@@ -9,6 +9,7 @@ homepage: "https://github.com/Firobe/ocaml-stdint-literals"
 bug-reports: "https://github.com/Firobe/ocaml-stdint-literals/issues"
 depends: [
   "ppxlib"
+  "stdint"
   "dune" {>= "2.8" & build}
   "stdint" {with_test}
   "odoc" {with-doc}
