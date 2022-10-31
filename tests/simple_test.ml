@@ -15,12 +15,15 @@ let simple_literals =
   Format.printf "%a\n" Uint16.printer u16 ;
   Format.printf "%a\n" Uint32.printer u32 ;
   Format.printf "%a\n" Uint64.printer u64 ;
-  Format.printf "%a\n" Uint128.printer u128 ;
   Format.printf "%a\n" Int8.printer s8 ;
   Format.printf "%a\n" Int16.printer s16 ;
   Format.printf "%a\n" Int32.printer s32 ;
   Format.printf "%a\n" Int64.printer s64 ;
-  Format.printf "%a\n" Int128.printer s128
+  try
+    Format.printf "%a\n" Uint128.printer u128 ;
+    Format.printf "%a\n" Int128.printer s128
+  with
+  | Failure _ -> Format.printf "128 bit ints are not available\n"
 
 let hex_literals = 
   Format.printf "%a\n" Uint16.printer_hex Uint16.(0xDDAAU + 0xAADDU)

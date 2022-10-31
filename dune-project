@@ -1,7 +1,7 @@
 (lang dune 2.8)
 (name stdint-literals)
 
-; (version 1.0.0)
+(version 1.0)
 
 (generate_opam_files true)
 
@@ -15,7 +15,6 @@
  (synopsis "Small PPX for fixed size integer literals")
  (description "Small PPX for fixed size integer literals")
  (depends
-   ppxlib
-   stdint
+   (ppxlib (>= 0.7.0))
    (dune :build)
-   (stdint :with_test)))
+   stdint))
