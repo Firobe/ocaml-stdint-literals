@@ -15,6 +15,10 @@ single-character suffixes on integers:
 - `L` denotes an `int64` (default behavior in OCaml)
 - `W` denotes an `int128`
 
+## Installation
+
+Run `opam install stdint-literals`
+
 ## Usage
 
 Add `stdint-literals` in your `dune` file as follows:
